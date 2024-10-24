@@ -37,6 +37,11 @@ def main():
             if ast.collide(player_one):
                 print("GAME OVER")
                 sys.exit()
+            for bullet in shots:
+                if bullet.collide(ast):
+                    bullet.kill()
+                    ast.split()
+                    break
 
         screen.fill(color=(0,0,0))
 
